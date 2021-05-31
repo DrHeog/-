@@ -1,0 +1,98 @@
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+	int N,M,x,y,t,color;
+	cin>>N>>M;
+	N=N+1;
+	M=M+1;
+	cin>>y>>x;
+	cin>>color;
+	int A[N][M];
+	for (int i=0;i<N;i++){
+		for (int j=0;j<M;j++){
+			if (j>=1 && i>=1){
+				cin>>A[i][j];}
+			}
+		}
+	t=A[x][y];
+	A[y][x]=color;
+	A[y][x-1]=color;
+	A[y][x+1]=color;
+	A[y+1][x+1]=color;
+	A[2][2]=color;
+	A[1][1]=0;
+	
+	if (A[x-1][y]==t){
+		A[x-1][y]=color;}
+	if (A[x][y-1]==t){
+		A[x][y-1]=color;}
+	if (A[x+1][y]==t){
+		A[x-1][y]=color;}
+	if (A[x][y+1]==t){
+		A[x-1][y]=color;}
+	A[x][y]=color;
+	A[x][y-2]=color;
+	A[x][y-1]=color;
+	A[x-1][y-1]=color;
+	A[x+1][y+1]=color;
+	if (A[x][y+1]==color){
+		x=x;
+		y=y+1;
+		if (A[x-1][y]==t){
+			A[x-1][y]=color;}
+		if (A[x-1][y-1]==t){
+			A[x][y-1]=color;}
+		if (A[x+1][y]==t){
+			A[x-1][y]=color;}
+		if (A[x][y+1]==t){
+			A[x-1][y]=color;}
+	}	
+	if (A[x][y-1]==color){
+		x=x;
+		y=y-1;
+		if (A[x-1][y]==t){
+			A[x-1][y]=color;}
+		if (A[x-1][y-1]==t){
+			A[x][y-1]=color;}
+		if (A[x+1][y]==t){
+			A[x-1][y]=color;}
+		if (A[x][y+1]==t){
+			A[x-1][y]=color;}
+	}	
+	if (A[x-1][y]==color){
+		x=x-1;
+		y=y;
+		if (A[x-1][y]==t){
+			A[x-1][y]=color;}
+		if (A[x-1][y-1]==t){
+			A[x][y-1]=color;}
+		if (A[x+1][y]==t){
+			A[x-1][y]=color;}
+		if (A[x][y+1]==t){
+			A[x-1][y]=color;}
+	}	
+	if (A[x+1][y]==color){
+		x=x+1;
+		y=y;
+		if (A[x-1][y]==t){
+			A[x-1][y]=color;}
+		if (A[x-1][y-1]==t){
+			A[x][y-1]=color;}
+		if (A[x+1][y]==t){
+			A[x-1][y]=color;}
+		if (A[x][y+1]==t){
+			A[x-1][y]=color;}
+	}	
+	for (int i=0;i<N;i++){
+		for (int j=0;j<M;j++){
+			if (j>=1 && i>=1){
+				cout<<A[i][j]<<" ";}
+			}
+		cout<<"\n";
+		}
+}
+
