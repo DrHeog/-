@@ -1,0 +1,58 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int a,b,c,d,r,e,count;
+    cin>>a;
+    cin>>b;
+    int f=b+1;
+    int y=a;
+    count=0;
+    for (y=a;y<f;y++){
+		d=a%100;
+		while (y>=100){
+			y=y/10;
+		}
+		c=y;
+		r=c-d;
+		if (y%r==0){
+			count=count+1;
+			e=a;}
+		}
+	if (count==0){
+	cout<<"0 0";}
+	else{
+		cout<<count-1<<" "<<e;}
+}
+////////////////////////////////
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int a,b,c,d,q,w,e,count;
+    cin>>a;
+    cin>>b;
+    q=b-a;
+    count=0;
+    if (q>=100){
+		d=q%100;
+		while (q>100){
+			q=q/10;}
+		c=q;
+		w=c-d;
+		for (int i=a;i<b+1;i++){
+			if (i%w==0){
+				e=i;
+				count=count+1;}
+			}
+		}
+	if (count==0){
+	cout<<"0 0";}
+	else{
+		cout<<count-1<<" "<<e;}
+}
